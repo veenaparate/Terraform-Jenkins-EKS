@@ -15,16 +15,16 @@ module "vpc" {
   single_nat_gateway   = true
 
   tags = {
-    "kubernetes.io/cluster/myawsekscluster" = "shared"
+    "kubernetes.io/cluster/my-awsekscluster" = "shared"
   }
 
   public_subnet_tags = {
-    "kubernetes.io/cluster/myawsekscluster" = "shared"
+    "kubernetes.io/cluster/my-awsekscluster" = "shared"
     "kubernetes.io/role/elb"                = 1
   }
 
   private_subnet_tags = {
-    "kubernetes.io/cluster/myawsekscluster" = "shared"
+    "kubernetes.io/cluster/my-awsekscluster" = "shared"
     "kubernetes.io/role/internel-elb"       = 1
   }
 
@@ -36,7 +36,7 @@ module "vpc" {
 module "eks" {
   source = "terraform-aws-modules/eks/aws"
 
-  cluster_name    = "myawsekscluster"
+  cluster_name    = "my-awsekscluster"
   cluster_version = "1.29"
 
   vpc_id     = module.vpc.vpc_id
