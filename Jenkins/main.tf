@@ -24,9 +24,6 @@ module "vpc" {
 
 
 
-
-
-
 #Security Group
 module "sg" {
   source = "terraform-aws-modules/security-group/aws"
@@ -67,12 +64,6 @@ module "sg" {
     Name = "jenkins-security-group"
   }
 }
-
-
-
-
-
-
 
 
 #EC2 instance
